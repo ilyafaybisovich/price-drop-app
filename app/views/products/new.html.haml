@@ -2,5 +2,5 @@
 	= f.label :url
 	= f.url_field :url
 	= f.label :budget
-	= f.number_field :budget
+	= f.number_field :budget, in: (0..1000000), step: 0.01 
 	= f.submit 'Watch item'
