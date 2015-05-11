@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def create
     amazon_id = find_amazon_id(sanitize_params[:url])
     product = product_from_amazon(amazon_id)
-    hash = sanitize_params.merge({title: product[:title], price: product[:price]})
+    hash = sanitize_params.merge({title: product[:title], price: product[:price], image: product[:image]})
     @product = Product.create(hash)
     redirect_to '/'
   end
@@ -37,14 +37,15 @@ class ProductsController < ApplicationController
               'IdType'=>'ASIN',
               'ItemId'=>amazon_id,
               'Operation'=>'ItemLookup',
-              'ResponseGroup'=>'ItemAttributes,OfferSummary'})
+              'ResponseGroup'=>'Images,ItemAttributes,OfferSummary'})
     response.to_h
   end
 
   def format_amazon_response(hashed_response)
     title = hashed_response['ItemLookupResponse']['Items']['Item']['ItemAttributes']['Title']
     price = hashed_response['ItemLookupResponse']['Items']['Item']['OfferSummary']['LowestNewPrice']['Amount']
-    { title: title, price: price.to_i / 100.00 }
+    image = hashed_response['ItemLookupResponse']['Items']['Item']['MediumImage']['URL']
+    { title: title, price: price.to_i / 100.00, image: image}
   end
 
 end

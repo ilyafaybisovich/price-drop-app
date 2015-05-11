@@ -6,7 +6,7 @@
   %table.table
     -for product in @products
       %tr
-        %td= product.url
+        %td= image_tag(product.image)
         %td= product.title
         %td= number_to_currency(product.price, {locale: :en})
         %td= number_to_currency(product.budget, {locale: :en})
