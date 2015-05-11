@@ -1,0 +1,12 @@
+%h1 Amazong Deal
+%h2 Getting you a great deal
+= button_to 'Watch new item', new_product_path, method: :get
+
+- if @products.any?
+  %table.table
+    -for product in @products
+      %tr
+        %td= product.url
+        %td= product.title
+        %td= number_to_currency(product.price, {locale: :en})
+        %td= number_to_currency(product.budget, {locale: :en})
