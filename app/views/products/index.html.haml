@@ -8,4 +8,5 @@
       %tr
         %td= product.url
         %td= product.title
+        %td= number_to_currency(product.price, {locale: :en})
         %td= number_to_currency(product.budget, {locale: :en})
