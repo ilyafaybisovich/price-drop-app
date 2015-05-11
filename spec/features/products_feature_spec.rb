@@ -15,5 +15,6 @@ feature 'products' do
     click_button 'Watch item'
     expect(current_path).to eq '/'
     expect(page).to have_content 'http://www.amazon.co.uk/Big-Willie-Style-Will-Smith/dp/B0000256XN'
+    expect(page).to have_content '0.80'
   end
 end
