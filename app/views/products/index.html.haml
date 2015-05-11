@@ -1,12 +1,28 @@
-%h1 Amazong Deal
-%h2 Getting you a great deal
-= button_to 'Watch new item', new_product_path, method: :get
+%header.jumbotron
+  %div.container
+    %h1 Amazong Deal
+    %h2 Getting you a great deal
+    = button_to 'Watch new item', new_product_path, method: :get, class: 'btn btn-success btn-lg'
 
-- if @products.any?
-  %table.table
-    -for product in @products
+    %div.product_new_form
+      = form_for @product do |f|
+        = f.label :url
+        = f.url_field :url
+        = f.label :budget
+        = f.number_field :budget, in: (0..1000000), step: 0.01
+        = f.submit 'Watch item'
+
+%section.container
+  - if @products.any?
+    %table.table
       %tr
-        %td= image_tag(product.image)
-        %td= product.title
-        %td= number_to_currency(product.price, {locale: :en})
-        %td= number_to_currency(product.budget, {locale: :en})
+        %th Image
+        %th Title
+        %th Initial Price
+        %th Budget
+      -for product in @products
+        %tr
+          %td= image_tag(product.image)
+          %td= product.title
+          %td= number_to_currency(product.price, {locale: :en})
+          %td= number_to_currency(product.budget, {locale: :en})
