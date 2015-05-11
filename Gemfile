@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 
+gem 'vacuum'
+
 gem 'haml'
 
 gem 'thin'
