@@ -1,3 +1,27 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.hidden {
+  display: none;
+}
+
+header.jumbotron {
+  background-color: #FF9900;
+  color: white;
+}
+
+header.jumbotron a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.jumbotron input {
+  margin-top: 1em;
+}
+
+.project_url {
+  vertical-align: middle;
+  margin-right: 0.5em
+}
+
+.project_budget {
+  vertical-align: middle;
+  margin-right: 0.5em
+}
