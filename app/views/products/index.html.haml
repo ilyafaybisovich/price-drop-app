@@ -25,9 +25,10 @@
       %tr
         %th Image
         %th Title
-        %th Initial Price
+        %th Current Price
         %th Budget
       -for product in @products
+        - current_price = format_amazon_price_response(get_amazon_price(find_amazon_id(product.url)))
         %tr
           %td
             %a{href: product.url}
@@ -35,5 +36,5 @@
           %td
             %a{href: product.url}
               = product.title
-          %td= number_to_currency(product.price, {locale: :en})
-          %td= number_to_currency(product.budget, {locale: :en})
+          %td.current_price{data: { number: current_price }}= number_to_currency(current_price, {locale: :en})
+          %td.budget{data: { number: product.budget }}= number_to_currency(product.budget, {locale: :en})

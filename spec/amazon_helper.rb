@@ -134,4 +134,8 @@ module AmazonHelper
          "TotalRefurbished"=>"0"}}}}}
   end
 
+  def price_response
+    {"ItemLookupResponse"=>{"OperationRequest"=>{"HTTPHeaders"=>{"Header"=>{"Name"=>"UserAgent", "Value"=>"Jeff/1.3.0 (Language=Ruby; Ilyas-MacBook-Air-2.local)"}}, "RequestId"=>"c613b3c9-c3ab-4cfc-9870-2b68517d5601", "Arguments"=>{"Argument"=>[{"Name"=>"AWSAccessKeyId", "Value"=>"AKIAIRBKK35SHPHUR23Q"}, {"Name"=>"AssociateTag", "Value"=>"pridro02-20"}, {"Name"=>"Condition", "Value"=>"New"}, {"Name"=>"IdType", "Value"=>"ASIN"}, {"Name"=>"ItemId", "Value"=>"B0000256XN"}, {"Name"=>"Operation", "Value"=>"ItemLookup"}, {"Name"=>"ResponseGroup", "Value"=>"OfferSummary"}, {"Name"=>"Service", "Value"=>"AWSECommerceService"}, {"Name"=>"SignatureMethod", "Value"=>"HmacSHA256"}, {"Name"=>"SignatureVersion", "Value"=>"2"}, {"Name"=>"Timestamp", "Value"=>"2015-05-12T09:40:10Z"}, {"Name"=>"Version", "Value"=>"2013-08-01"}, {"Name"=>"Signature", "Value"=>"rwHLG2Foahdl29aTkU4jtoEShf/qrkbKsaaXmfVVyjo="}]}, "RequestProcessingTime"=>"0.0111970000000000"}, "Items"=>{"Request"=>{"IsValid"=>"True", "ItemLookupRequest"=>{"Condition"=>"New", "IdType"=>"ASIN", "ItemId"=>"B0000256XN", "ResponseGroup"=>"OfferSummary", "VariationPage"=>"All"}}, "Item"=>{"ASIN"=>"B0000256XN", "OfferSummary"=>{"LowestNewPrice"=>{"Amount"=>"98", "CurrencyCode"=>"GBP", "FormattedPrice"=>"£0.98"}, "LowestUsedPrice"=>{"Amount"=>"1", "CurrencyCode"=>"GBP", "FormattedPrice"=>"£0.01"}, "LowestCollectiblePrice"=>{"Amount"=>"300", "CurrencyCode"=>"GBP", "FormattedPrice"=>"£3.00"}, "TotalNew"=>"38", "TotalUsed"=>"170", "TotalCollectible"=>"4", "TotalRefurbished"=>"0"}}}}}
+  end
+
 end
