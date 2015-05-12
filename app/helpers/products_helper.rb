@@ -1,5 +1,16 @@
 module ProductsHelper
 
+  def find_glyphicon_class(current_price, original_price)
+    price_change = current_price - original_price
+    if price_change > 0
+      "glyphicon-arrow-up"
+    elsif price_change < 0
+      "glyphicon-arrow-down"
+    else
+      "glyphicon-minus"
+    end
+  end
+
   def find_amazon_id(url)
     if /\/dp\/(.*)\// =~ url
       /\/dp\/(.*)\//.match(url)[1]
