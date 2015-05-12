@@ -19,7 +19,9 @@ $(document).on('ready page:load',function() {
     var budget = $(this).find('.budget').data('number');
 
     if (current_price <= budget ) {
-      $(this).css('background-color', '#98FB98')
+      // $(this).addClass('success')
+      $(this).css({'background-color': '#18BC9C', 'color' : 'white'});
+      $(this).find('.url').css('color', 'white')
     }
 
   });

@@ -2,6 +2,10 @@
   display: none;
 }
 
+.table tr {
+  border-bottom: 0.5em;
+}
+
 header.jumbotron {
   background-image: url("/assets/amazong.jpg");
   color: white;
