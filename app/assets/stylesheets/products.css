@@ -44,3 +44,15 @@ header.jumbotron h1 {
 .project_budget {
   color: black;
 }
+
+.glyphicon-arrow-down {
+  color: green;
+}
+
+.glyphicon-arrow-up {
+  color: red;
+}
+
+.current_price .glyphicon {
+  margin-left: 0.5em;
+}
