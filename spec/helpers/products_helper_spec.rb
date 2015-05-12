@@ -28,6 +28,10 @@ RSpec.describe ProductsHelper, type: :helper do
     expect(helper.find_amazon_id('http://www.amazon.co.uk/gp/product/B00KY0JHZU/ref=s9_hps_bw_g199_i2?pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-4&pf_rd_r=1FBZTDZ0SGHFN388DMH9&pf_rd_t=101&pf_rd_p=477847347&pf_rd_i=471541031')).to eq 'B00KY0JHZU'
   end
 
+  it "matches complex urls not following regular format without trailing slash" do
+    expect(helper.find_amazon_id('http://www.amazon.co.uk/gp/product/B00IIK30UQ?ref_=gb1h_img_c-2_8707_8847b92e&smid=A3P5ROKL5A1OLE')).to eq 'B00IIK30UQ'
+  end
+
   it "throws error when url does not match" do
     expect { helper.find_amazon_id('http://www.amazon.co.uk/Greatest-Hits-Will-Smith/dp/') }.to raise_error 'no amazon id'
   end
