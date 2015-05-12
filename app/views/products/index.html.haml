@@ -2,19 +2,22 @@
   %div.container
     %h1
       %a{href: '/'}
-        Amazong Deal
+        Amazong
     %h2
       %a{href: '/'}
         Getting you a great deal
-    = button_to 'Watch new item', new_product_path, method: :get, class: 'btn btn-success btn-lg header_button'
+    = button_to 'Watch new item', new_product_path, method: :get, class: 'btn btn-warning btn-lg header_button'
 
-    %div.product_new_form
+    %div.product_new_form.row
       = form_for @product do |f|
-        = f.label :url, class: 'hidden'
-        = f.url_field :url, placeholder: 'Url',class: 'project_url'
-        = f.label :budget, class: 'hidden'
-        = f.number_field :budget, placeholder: 'Budget', in: (0..1000000), step: 0.01, class: 'project_budget'
-        = f.submit 'Watch item', class: 'btn btn-success btn-lg watch_button'
+        %div.col-lg-8
+          = f.label :url, class: 'hidden'
+          = f.url_field :url, placeholder: 'Url',class: 'project_url form-control'
+        %div.col-lg-2
+          = f.label :budget, class: 'hidden'
+          = f.number_field :budget, placeholder: 'Budget', in: (0..1000000), step: 0.01, class: 'project_budget form-control'
+        %div.col-lg-2
+          = f.submit 'Watch item', class: 'btn btn-warning watch_button'
 
 %section.container
   - if @products.any?
@@ -25,6 +28,7 @@
         %th Current Price
         %th Budget
       -for product in @products
+        - current_price = format_amazon_price_response(get_amazon_price(find_amazon_id(product.url)))
         %tr
           %td
             %a{href: product.url}
@@ -32,5 +36,5 @@
           %td
             %a{href: product.url}
               = product.title
-          %td= number_to_currency(format_amazon_price_response(get_amazon_price(find_amazon_id(product.url))), {locale: :en})
-          %td= number_to_currency(product.budget, {locale: :en})         
+          %td.current_price{data: { number: current_price }}= number_to_currency(current_price, {locale: :en})
+          %td.budget{data: { number: product.budget }}= number_to_currency(product.budget, {locale: :en})
