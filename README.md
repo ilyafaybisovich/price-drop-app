@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/DanBlakeman/price-drop-app.svg)](https://travis-ci.org/DanBlakeman/price-drop-app)
+[![Coverage Status](https://coveralls.io/repos/DanBlakeman/price-drop-app/badge.svg)](https://coveralls.io/r/DanBlakeman/price-drop-app)
+
 Creating an app to give alerts on amazon price drops!
 -----
 

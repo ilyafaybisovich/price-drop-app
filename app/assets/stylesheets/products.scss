@@ -2,8 +2,12 @@
   display: none;
 }
 
+.table tr {
+  border-bottom: 0.5em;
+}
+
 header.jumbotron {
-  background-image: url("/assets/amazong.jpg");
+  background-image: url(asset-path('amazong.jpg'));
   color: white;
 }
 
@@ -43,4 +47,20 @@ header.jumbotron h1 {
 
 .project_budget {
   color: black;
+}
+
+.glyphicon-arrow-down {
+  color: green;
+}
+
+.glyphicon-arrow-up {
+  color: red;
+}
+
+.glyphicon-minus {
+  color: grey;
+}
+
+.current_price .glyphicon {
+  margin-left: 0.5em;
 }

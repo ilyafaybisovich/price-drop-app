@@ -45,12 +45,33 @@ RSpec.describe ProductsHelper, type: :helper do
     end
   end
 
-  
+
   context 'finds Amazon price' do
     it 'should return price from an amazon response' do
 
       expect( format_amazon_price_response(price_response)).to eq(0.98)
 
     end
+  end
+
+  context 'shows correct glyphicon' do
+
+      it 'should show a down arrow if current price is less than original price' do
+        current_price = 10.00
+        original_price = 12.00
+        expect(find_glyphicon_class(current_price, original_price)).to eq 'glyphicon-arrow-down'
+      end
+
+      it 'should show a up arrow if current price is greater than original price' do
+        current_price = 12.00
+        original_price = 10.00
+        expect(find_glyphicon_class(current_price, original_price)).to eq 'glyphicon-arrow-up'
+      end
+
+      it 'should return "-" if current price is same as original price' do
+        current_price = 12.00
+        original_price = 12.00
+        expect(find_glyphicon_class(current_price, original_price)).to eq 'glyphicon-minus'
+      end
   end
 end
