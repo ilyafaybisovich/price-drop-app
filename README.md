@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DanBlakeman/price-drop-app.svg)](https://travis-ci.org/DanBlakeman/price-drop-app)
+
 Creating an app to give alerts on amazon price drops!
 -----
 
