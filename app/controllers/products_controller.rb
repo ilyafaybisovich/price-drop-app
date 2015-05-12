@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @product = Product.new
-    @products = Product.all
+    @products = Product.all.reverse
   end
 
   def new

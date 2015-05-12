@@ -23,8 +23,8 @@
   - if @products.any?
     %table.table
       %tr
-        %th Image
-        %th Title
+        %th Product
+        %th
         %th Current Price
         %th Budget
       -for product in @products
@@ -34,7 +34,7 @@
             %a{href: product.url}
               = image_tag(product.image)
           %td
-            %a{href: product.url}
+            %a.url{href: product.url}
               = product.title
           %td.current_price{data: { number: current_price }}= number_to_currency(current_price, {locale: :en})
           %td.budget{data: { number: product.budget }}= number_to_currency(product.budget, {locale: :en})
