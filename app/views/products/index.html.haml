@@ -38,6 +38,6 @@
               = product.title
           %td.current_price{data: { number: current_price }}
             %span= number_to_currency(current_price, {locale: :en})
-            %span.glyphicon.glyphicon-arrow-up 0.70
-            / %span.glyphicon.glyphicon-arrow-down 0.75
+            / %span.glyphicon.glyphicon-arrow-up 0.70
+            %span.glyphicon.glyphicon-arrow-down 0.75
           %td.budget{data: { number: product.budget }}= number_to_currency(product.budget, {locale: :en})
