@@ -28,6 +28,8 @@ MVps:
   - Can access current price
 
   - Can identify products that are in budget
+      - Further Styling
+
 
 Accessing the Amazon Product Advertising API
 -----

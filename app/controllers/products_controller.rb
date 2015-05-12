@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def create
     amazon_id = find_amazon_id(sanitize_params[:url])
     product = product_from_amazon(amazon_id)
-    hash = sanitize_params.merge({title: product[:title], price: product[:price], image: product[:image]})
+    hash = sanitize_params.merge({ title: product[:title], price: product[:price], image: product[:image] })
     @product = Product.create(hash)
     redirect_to '/'
   end
